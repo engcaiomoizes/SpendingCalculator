@@ -21,6 +21,14 @@ export class ExpenseChartComponent implements AfterViewInit {
       const labels = expenses.map(e => e.description);
       const data = expenses.map(e => e.amount);
 
+      const backgroundColors = expenses.map(e =>
+        e.type === 'Receita' ? 'rgba(75, 192, 192, 0.5)' : 'rgba(255, 99, 132, 0.5)'
+      );
+
+      const borderColors = expenses.map(e =>
+        e.type === 'Receita' ? 'rgba(75, 192, 192, 1)' : 'rgba(255, 99, 132, 1)'
+      );
+
       Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
       const canvas = document.getElementById('canvas') as HTMLCanvasElement;
@@ -33,8 +41,8 @@ export class ExpenseChartComponent implements AfterViewInit {
             {
               label: 'Gastos',
               data,
-              backgroundColor: 'rgba(75, 192, 192, 0.5)',
-              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: backgroundColors,
+              borderColor: borderColors,
               borderWidth: 1,
             },
           ],

@@ -15,7 +15,7 @@ table {
         background-color: #000;
 
         th, td {
-            padding: 0.6em;
+            padding: 0.3em 0.6em;
             border: 1px solid #000;
             color: #fff;
             text-align: left;
@@ -45,6 +45,16 @@ table {
                     transition-duration: 150ms;
                 }
             }
+        }
+    }
+
+    tfoot {
+        background-color: #c62828;
+
+        td, th {
+            padding: 0.6em;
+            color: #fff;
+            text-align: left;
         }
     }
 }

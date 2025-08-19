@@ -26,4 +26,6 @@
 
         <button type="submit" [disabled]="form.invalid">Salvar</button>
     </form>
+
+    <p *ngIf="msg">{{ msg }}</p>
 </div>

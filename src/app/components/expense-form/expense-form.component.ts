@@ -25,12 +25,14 @@ export class ExpenseFormComponent {
 
   constructor(private expenseService: ExpenseService) {}
 
+  msg = "";
+
   submit() {
     console.log(this.form.value);
     if (this.form.valid) {
       const expense: Expense = this.form.value as Expense;
       this.expenseService.addExpense(expense).then(() => {
-        console.log('Registro adicionado com sucesso!');
+        this.msg = "Registro cadastrado com sucesso!";
         this.form.reset();
       });
     }

@@ -23,5 +23,11 @@
                 </td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr>
+                <th>TOTAL</th>
+                <th colspan="4">{{ total$ | async | currency: 'BRL':'symbol' }}</th>
+            </tr>
+        </tfoot>
     </table>
 </div>
