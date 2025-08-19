@@ -31,14 +31,31 @@ cd spending-calculator
 npm install
 ```
 
-### 3️⃣ Executar o servidor de desenvolvimento
+### 3️⃣ Criar arquivo de configuração do Firebase
+Pelo fato de conter informações secretas do Firebase Firestore, o arquivo não foi incluído no repositório.
+
+- Crie o arquivo em: `src/environments/firebase.config.ts`
+
+```typescript
+export const firebaseConfig = {
+    apiKey: "SUA-API-KEY",
+    authDomain: "SEU-AUTH-DOMAIN",
+    projectId: "SEU-PROJECT-ID",
+    storageBucket: "SEU-STORAGE-BUCKET",
+    messagingSenderId: "SEU-MESSAGING-SENDER-ID",
+    appId: "SEU-APP-ID"
+};
+```
+
+
+### 4️⃣ Executar o servidor de desenvolvimento
 ```bash
 ng serve
 ```
 
 Acesse no navegador: http://localhost:4200
 
-## 🌐 Minha Versão em Produção
+## 🌐 Versão em Produção
 
 Disponibilizei uma versão em produção em https://spending-calculator.vercel.app. Nela, você pode acessar para testar o funcionamento do site através do usuário abaixo:
 - **E-mail:** `teste@example.com`
