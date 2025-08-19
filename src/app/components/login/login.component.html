@@ -1,0 +1,18 @@
+<div class="container-flex">
+    <h1>{{ title }}</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" formControlName="email" id="email">
+        </div>
+        
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" formControlName="password" id="password">
+        </div>
+
+        <button type="submit" [disabled]="form.invalid">Entrar</button>
+    </form>
+
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>

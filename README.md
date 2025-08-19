@@ -1,59 +1,53 @@
-# SpendingCalculator
+# 💰 Calculadora de Gastos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Um sistema de **controle de gastos pessoais** desenvolvido com **Angular** e **Firebase**, focado em simplicidade, organização e análise financeira.
 
-## Development server
+## ✨ Funcionalidades
 
-To start a local development server, run:
+- 🔑 Autenticação com Firebase (login/logout)
+- 📝 Cadastro e listagem de gastos
+- 📊 Visualização de gastos em **gráficos interativos**
+- 🔒 Proteção de rotas para usuários autenticados
+- 🌐 Integração em tempo real com o Firestore
 
+## 🛠️ Tecnologias Utilizadas
+
+- [Angular](https://angular.dev/) - Framework frontend
+- [Firebase Firestore](https://firebase.google.com/docs/firestore) - Banco de dados em tempo real
+- [Firebase Auth](https://firebase.google.com/docs/auth) - Autenticação de usuários
+- [AngularFire](https://github.com/angular/angularfire) - Integração entre Angular e Firebase
+- [RxJS](https://rxjs.dev/) - Programação reativa
+- [Chart.js](https://www.chartjs.org/) - Visualização de dados em gráficos
+
+## 🚀 Como Executar o Projeto
+
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/engcaiomoizes/spending-calculator.git
+cd spending-calculator
+```
+### 2️⃣ Instalar as dependências
+```bash
+npm install
+```
+
+### 3️⃣ Executar o servidor de desenvolvimento
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse no navegador: http://localhost:4200
 
-## Code scaffolding
+## 🌐 Minha Versão em Produção
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Disponibilizei uma versão em produção em https://spending-calculator.vercel.app. Nela, você pode acessar para testar o funcionamento do site através do usuário abaixo:
+- **E-mail:** `teste@example.com`
+- **Senha:** `Teste@123`
 
-```bash
-ng generate component component-name
-```
+⚠️ **Observação:** Esta conta é apenas para fins de demonstração. Não utilize informações sensíveis.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📌 Próximos Passos
+- 🔍 Filtros por categoria
+- 📅 Filtros por período (mês/ano)
+- 📑 Exportação de relatórios (PDF/Excel)
+- 👥 Suporte a múltiplos usuários com diferentes carteiras de gastos

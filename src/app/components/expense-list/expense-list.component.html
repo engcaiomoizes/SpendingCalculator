@@ -7,26 +7,20 @@
                 <th>Valor</th>
                 <th>Tipo</th>
                 <th>Data</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Spotify</td>
-                <td>R$ 27,90</td>
-                <td>Despesa</td>
-                <td>10/08/2025</td>
-            </tr>
-            <tr>
-                <td>Internet</td>
-                <td>R$ 55,00</td>
-                <td>Receita</td>
-                <td>06/08/2025</td>
-            </tr>
-            <tr>
-                <td>Max</td>
-                <td>R$ 29,99</td>
-                <td>Despesa</td>
-                <td>14/08/2025</td>
+            <tr *ngFor="let expense of list$ | async">
+                <td>{{ expense.description }}</td>
+                <td>{{ expense.amount | currency: 'BRL':'symbol' }}</td>
+                <td>{{ expense.type }}</td>
+                <td>{{ expense.date | date: 'dd/MM/yyyy' }}</td>
+                <td style="width: 60px;">
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <button (click)="deleteExpense(expense.id)">Excluir</button>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>

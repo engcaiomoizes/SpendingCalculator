@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Expense } from "../models/expense.model";
-import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, deleteDoc, doc, Firestore } from '@angular/fire/firestore';
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -17,6 +17,11 @@ export class ExpenseService {
     getExpenses(): Observable<Expense[]> {
         const expensesRef = collection(this.firestore, 'expenses');
         return collectionData(expensesRef, { idField: 'id' }) as Observable<Expense[]>;
+    }
+
+    async deleteExpense(id: string): Promise<void> {
+        const expenseDocRef = doc(this.firestore, `expenses/${id}`);
+        return deleteDoc(expenseDocRef);
     }
 
     // private storageKey = 'expenses';

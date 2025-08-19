@@ -1,9 +1,23 @@
 <header class="app-header">
     <h1>💰 Calculadora de Gastos</h1>
 
+    <nav *ngIf="user$ | async">
+        <ul>
+            <li>
+                <a routerLink="/">Listagem</a>
+            </li>
+            <li>
+                <a routerLink="cadastro">Cadastro</a>
+            </li>
+            <li>
+                <a routerLink="grafico">Gráfico</a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- Exemplo com usuário logado -->
     <div class="user-section">
-        <span>Olá, Caio Moizés Santos.</span>
-        <button>Sair</button>
+        <span *ngIf="user$ | async as user">Olá, <b>{{ user.email }}</b>.</span>
+        <button *ngIf="user$ | async" (click)="logout()">Sair</button>
     </div>
 </header>

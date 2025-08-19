@@ -11,6 +11,34 @@
         font-size: 20px;
     }
 
+    nav {
+        //
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: white;
+                    // background-color: #ef5350;
+                    // padding: 4px 10px;
+                    border-radius: 3px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: #eb7d7d;
+                    }
+                }
+            }
+        }
+    }
+
     .user-section {
         display: flex;
         align-items: center;
@@ -22,6 +50,7 @@
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
+            font-weight: bold;
             cursor: pointer;
 
             &:hover {
