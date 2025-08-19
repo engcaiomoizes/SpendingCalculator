@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ExpenseService } from '../../services/expense.service';
+import { Expense } from '../../models/expense.model';
 
 @Component({
   selector: 'app-expense-form',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './expense-form.component.html',
-  styleUrl: './expense-form.component.scss'
+  styleUrls: ['./expense-form.component.scss']
 })
 export class ExpenseFormComponent {
   title = "Formulário de Gastos";
@@ -19,9 +21,18 @@ export class ExpenseFormComponent {
     date: new FormControl('', Validators.required),
   });
 
-  types = ['Receita', 'Despesa']
+  types = ['Receita', 'Despesa'];
+
+  constructor(private expenseService: ExpenseService) {}
 
   submit() {
     console.log(this.form.value);
+    if (this.form.valid) {
+      const expense: Expense = this.form.value as Expense;
+      this.expenseService.addExpense(expense).then(() => {
+        console.log('Registro adicionado com sucesso!');
+        this.form.reset();
+      });
+    }
   }
 }

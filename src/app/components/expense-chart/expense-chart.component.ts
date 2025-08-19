@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { BarElement, CategoryScale, Chart, Legend, LinearScale, Title, Tooltip } from 'chart.js';
+import { BarController, BarElement, CategoryScale, Chart, Legend, LinearScale, Title, Tooltip } from 'chart.js';
 
 @Component({
   selector: 'app-expense-chart',
@@ -13,7 +13,7 @@ export class ExpenseChartComponent implements AfterViewInit {
   chart!: Chart;
 
   ngAfterViewInit(): void {
-    Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+    Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 
