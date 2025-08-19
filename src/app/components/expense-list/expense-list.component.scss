@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+table {
+    background-color: aquamarine;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 800px;
+
+    thead {
+        th, td {
+            padding: 0.6em;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+        }
+    }
+
+    tbody {
+        th, td {
+            padding: 0.6em;
+            border: 1px solid #000;
+        }
+    }
+}

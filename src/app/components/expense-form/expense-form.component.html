@@ -1,0 +1,29 @@
+<div class="container-flex">
+    <h1>{{ title }}</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div>
+            <label for="description">Descrição:</label>
+            <input type="text" formControlName="description" id="description">
+        </div>
+        
+        <div>
+            <label for="amount">Valor:</label>
+            <input type="number" formControlName="amount" id="amount">
+        </div>
+
+        <div>
+            <label for="type">Tipo:</label>
+            <select formControlName="type" id="type">
+                <option value="">Selecione...</option>
+                <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="date">Data:</label>
+            <input type="date" formControlName="date" id="date">
+        </div>
+
+        <button type="submit" [disabled]="form.invalid">Salvar</button>
+    </form>
+</div>
