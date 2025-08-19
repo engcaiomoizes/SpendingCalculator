@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "generate-firebase-config": "node scripts/generate-firebase-config.js",
+    "build": "npm run generate-firebase-config && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
