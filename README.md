@@ -57,7 +57,7 @@ Acesse no navegador: http://localhost:4200
 
 ## 🌐 Versão em Produção
 
-Disponibilizei uma versão em produção em https://spending-calculator.vercel.app. Nela, você pode acessar para testar o funcionamento do site através do usuário abaixo:
+Disponibilizei uma versão em produção em https://spending-calculator-dun.vercel.app. Nela, você pode acessar para testar o funcionamento do site através do usuário abaixo:
 - **E-mail:** `teste@example.com`
 - **Senha:** `Teste@123`
 
