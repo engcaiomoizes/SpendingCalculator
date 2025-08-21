@@ -5,13 +5,14 @@
     background: #1976d2;
     color: white;
     padding: 10px 20px;
+    // border: 1px solid #000;
 
     h1 {
         margin: 0;
         font-size: 20px;
     }
 
-    nav {
+    nav:not(.mobile-menu) {
         //
 
         ul {
@@ -44,6 +45,34 @@
         align-items: center;
         gap: 10px;
 
+        .open-menu {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+
+            ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                li {
+                    a {
+                        font-size: 12px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: white;
+                        font-weight: bold;
+
+                        &:hover {
+                            color: #eb7d7d;
+                        }
+                    }
+                }
+            }
+        }
+
         button {
             background: #ef5350;
             border: none;
@@ -55,6 +84,40 @@
 
             &:hover {
                 background: #c62828;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+
+        nav {
+            display: none;
+        }
+
+        .user-section {
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+
+            .open-menu {
+                display:block;
+            }
+
+            span {
+                font-size: 12px;
+            }
+
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                border: 1px solid rgba(25, 118, 210, 1);
+                top: 30px;
+                background-color: rgba(25, 118, 210, 0.8);
+                border-radius: 8px;
+                width: 100%;
             }
         }
     }

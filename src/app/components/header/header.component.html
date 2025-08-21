@@ -17,6 +17,20 @@
 
     <!-- Exemplo com usuário logado -->
     <div class="user-section">
+        <button class="open-menu" (click)="switchMenu()">☰</button>
+        <nav *ngIf="menuStatus" class="mobile-menu">
+            <ul>
+                <li>
+                    <a (click)="closeMenu()" routerLink="/">Listagem</a>
+                </li>
+                <li>
+                    <a (click)="closeMenu()" routerLink="cadastro">Cadastro</a>
+                </li>
+                <li>
+                    <a (click)="closeMenu()" routerLink="grafico">Gráfico</a>
+                </li>
+            </ul>
+        </nav>
         <span *ngIf="user$ | async as user">Olá, <b>{{ user.email }}</b>.</span>
         <button *ngIf="user$ | async" (click)="logout()">Sair</button>
     </div>

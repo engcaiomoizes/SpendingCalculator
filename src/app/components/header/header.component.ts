@@ -13,6 +13,7 @@ export class HeaderComponent {
   title = "💰 Calculadora de Gastos";
 
   readonly user$;
+  menuStatus = false;
 
   constructor(private authService: AuthService, private router: Router) {
     this.user$ = this.authService.user$;
@@ -26,4 +27,7 @@ export class HeaderComponent {
       error: (err) => console.error('Erro ao sair:', err)
     });
   }
+
+  switchMenu() { this.menuStatus = !this.menuStatus; }
+  closeMenu() { this.menuStatus = false; }
 }

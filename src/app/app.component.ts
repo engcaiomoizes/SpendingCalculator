@@ -5,7 +5,7 @@ import { ExpenseFormComponent } from './components/expense-form/expense-form.com
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, ExpenseFormComponent],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

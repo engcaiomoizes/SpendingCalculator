@@ -9,3 +9,28 @@
 .grafico {
     width: 50%;
 }
+
+.not-mobile {
+    display: none;
+
+    span {
+        color: red;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        h1 {
+            font-size: 24px;
+        }
+    }
+
+    .grafico {
+        display: none;
+    }
+
+    .not-mobile {
+        display: block;
+    }
+}
