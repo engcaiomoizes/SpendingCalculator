@@ -17,7 +17,7 @@
 
     <!-- Exemplo com usuário logado -->
     <div class="user-section">
-        <button class="open-menu" (click)="switchMenu()">☰</button>
+        <button *ngIf="user$ | async" class="open-menu" (click)="switchMenu()">☰</button>
         <nav *ngIf="menuStatus" class="mobile-menu">
             <ul>
                 <li>
